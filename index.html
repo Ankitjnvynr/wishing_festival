@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Greetings</title>
+</head>
+<body>
+    <div class="container" id="container">
+
+        <h2><div id="yourName"></div></h2>
+        <h2>wishes you</h2>
+        <h1>Happy independence Day</h1>
+        <input oninput="genlink()" type="text" id="name" name="name">
+        <div  id="sh">Shere</div>
+        
+    </div>
+    <script>
+        
+        let shere=document.getElementById("sh");
+        let name=document.getElementById("name");
+        let con=document.getElementById("yourName");
+        
+        let recieveName=location.search.substring(1);
+        con.innerText=recieveName;
+
+        function genlink(){
+            sname=name.value;
+            shere.innerHTML=`<a target="_blank" href="http://127.0.0.1:5500/index.html?${sname}">Shere Now</a>`;
+        };
+
+    </script>
+</body>
+</html>
