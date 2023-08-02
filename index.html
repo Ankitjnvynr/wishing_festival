@@ -1,35 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Greetings</title>
 </head>
+
 <body>
     <div class="container" id="container">
+        <!-- flag area start -->
+        <div class="flag">
 
-        <h2><div id="yourName"></div></h2>
-        <h2>wishes you</h2>
-        <h1>Happy independence Day</h1>
-        <input oninput="genlink()" type="text" id="name" name="name">
-        <div  id="sh">Shere</div>
-        
+            <div class="saffron flag-item"></div>
+            <div class="white flag-item">
+                <div class="circle">
+
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+            <div class="green flag-item"></div>
+            <div class="flag-wave"></div>
+
+
+        </div>
+
+
+        <!-- flag area end -->
+
+        <div class="msg-section">
+            <h2>
+                <div id="yourName"></div>
+            </h2>
+            <h3>wishes you</h3>
+            <h2 class="clr-chg">Happy independence</h2>
+            <h2 class="clr-chg"> Day</h2>
+        </div>
+        <div class="inputName">
+            <input oninput="genlink()" type="text" id="name" name="name">
+        <div id="sh">Shere</div>
+        </div>
+
     </div>
     <script>
-        
-        let shere=document.getElementById("sh");
-        let name=document.getElementById("name");
-        let con=document.getElementById("yourName");
-        
-        let recieveName=location.search.substring(1);
-        con.innerText=recieveName;
 
-        function genlink(){
-            sname=name.value;
-            shere.innerHTML=`<a target="_blank" href="https://wa.me/?text=http://127.0.0.1:5500/index.html?${sname}">Shere Now</a>`;
+        let shere = document.getElementById("sh");
+        let name = document.getElementById("name");
+        let con = document.getElementById("yourName");
+
+        let recieveName = location.search.substring(1);
+        recieveName = recieveName.split("%20");
+        con.innerText = recieveName.join(" ");
+
+        function genlink() {
+            sname = name.value;
+            shere.innerHTML = `<a target="_blank" href="http://127.0.0.1:5500/index.html?${sname}">Shere Now</a>`;
         };
 
     </script>
 </body>
+
 </html>
